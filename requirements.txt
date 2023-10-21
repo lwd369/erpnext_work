@@ -1,1 +1,2 @@
 # frappe -- https://github.com/frappe/frappe is installed via 'bench init'
+wechatpy==1.8.18
