@@ -9,6 +9,7 @@
  "field_order": [
   "cropid",
   "section_break_r55pr",
+  "agentid",
   "app_secret",
   "contact_secret"
  ],
@@ -37,12 +38,18 @@
    "in_list_view": 1,
    "label": "\u901a\u8baf\u5f55SECRET",
    "reqd": 1
+  },
+  {
+   "fieldname": "agentid",
+   "fieldtype": "Data",
+   "label": "\u5e94\u7528agentid",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-10-21 12:30:55.701310",
+ "modified": "2023-10-21 17:59:20.982568",
  "modified_by": "Administrator",
  "module": "Erpnext Wxwork",
  "name": "wxwork_setting",

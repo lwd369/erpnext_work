@@ -1,7 +1,7 @@
 import frappe
 from redis import Redis
-from wechatpy.enterprise import WeChatClient
 from wechatpy.session.redisstorage import RedisStorage
+from erpnext_wxwork.wxwork.wechat_client import WeChatClient
 
 
 class WxWorkApp(object):
