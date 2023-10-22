@@ -1,5 +1,6 @@
 import frappe
 from erpnext_wxwork.wxwork.apps import WxWorkApp
+from urllib.parse import quote
 
 
 @frappe.whitelist(allow_guest=True)
@@ -12,8 +13,9 @@ def redirect(url):
     else:
         # 企业微信oauth2
         client = WxWorkApp.get_entry_app()
-        wx_login_url = "http://erp.asymall.com/api/method/erpnext_wxwork.oauth.wxwork_login"
-        redirect_url = client.oauth.authorize_url(wx_login_url, url)
+        wx_login_url = (frappe.get_conf().domain or frappe.local.site) + "/api/method/erpnext_wxwork.oauth.wxwork_login"
+
+        redirect_url = client.oauth.authorize_url(wx_login_url, quote(url))
         frappe.local.response["type"] = "redirect"
         frappe.local.response["location"] = redirect_url
 
@@ -30,14 +32,12 @@ def wxwork_login(code, state):
     if 0 != info['errcode']:
         return to_redirect()
 
-    userid = info['userid']
-    # ToDo 处理数据 跟进企业微信ID获取用户ID
-    wxwork_user = frappe.get_doc("wxwork_user", userid)
-    if wxwork_user is None:
+    wxid = info['userid']
+    try:
+        wxwork_user = frappe.get_doc("wxwork_user", wxid)
+    except frappe.DoesNotExistError:
         return to_redirect()
 
-    # 登录后再重定向
     frappe.local.login_manager.user = wxwork_user.en_user
     frappe.local.login_manager.post_login()
-
     to_redirect()
