@@ -122,7 +122,7 @@ doc_events = {
 	"Notification Log": {
 		"after_insert": "erpnext_wxwork.wxwork.notification_log.after_insert"
 	},
-	"Wxwork User": {
+	"wxwork_user": {
 		"after_insert": "erpnext_wxwork.wxwork.wxwork_user.after_insert"
 	},
 }
