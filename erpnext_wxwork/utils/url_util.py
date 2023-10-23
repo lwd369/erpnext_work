@@ -38,5 +38,5 @@ def wxwork_oauth_url(url):
     :param url:
     :return:
     """
-    url = quote(append_domain(url))
-    return append_domain("/api/method/erpnext_wxwork.oauth.redirect?url=" + url)
+    url = quote(append_domain_protocol(url))
+    return append_domain_protocol("/api/method/erpnext_wxwork.oauth.redirect?url=" + url)
