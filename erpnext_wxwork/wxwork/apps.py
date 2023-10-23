@@ -27,7 +27,6 @@ class WxWorkApp(object):
         """获取入口应用"""
         wxwork_setting = frappe.get_doc('wxwork_setting')
         if not wxwork_setting.cropid or not wxwork_setting.app_secret:
-            frappe.logger().error('企业微信入口应用未配置成功')
             return None
         return cls.__get_app_client(wxwork_setting.cropid, wxwork_setting.get_password("app_secret"), "entry")
 
