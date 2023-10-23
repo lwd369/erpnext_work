@@ -8,12 +8,14 @@ from urllib.parse import quote, urlparse
 def redirect(url):
     netloc = urlparse(url).netloc
     if netloc is None or "" == netloc:
-        url = url_util.append_domain(url)
+        url = url_util.append_domain_protocol(url)
+
     is_logged_in = frappe.session.user != "Guest"
     if is_logged_in:
         # 已经登录了，直接重定向
         frappe.local.response["type"] = "redirect"
         frappe.local.response["location"] = url
+
     else:
         # 企业微信oauth2
         client = WxWorkApp.get_entry_app()
@@ -21,7 +23,8 @@ def redirect(url):
             frappe.local.response["message"] = "wxword config err"
             return
 
-        wx_login_url = url_util.append_domain("/api/method/erpnext_wxwork.oauth.wxwork_login")
+        wx_login_url = url_util.append_domain_protocol("/api/method/erpnext_wxwork.oauth.wxwork_login")
+
 
         redirect_url = client.oauth.authorize_url(wx_login_url, quote(url))
         frappe.local.response["type"] = "redirect"
