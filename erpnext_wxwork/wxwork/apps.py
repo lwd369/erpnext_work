@@ -28,7 +28,9 @@ class WxWorkApp(object):
         wxwork_setting = frappe.get_single('wxwork_setting')
         if not wxwork_setting.cropid or not wxwork_setting.app_secret:
             return None
-        return cls.__get_app_client(wxwork_setting.cropid, wxwork_setting.get_password("app_secret"), "entry")
+        app = cls.__get_app_client(wxwork_setting.cropid, wxwork_setting.get_password("app_secret"), "entry")
+        app.agentid = wxwork_setting.agentid
+        return app
 
     @classmethod
     def get_contact_app(cls):

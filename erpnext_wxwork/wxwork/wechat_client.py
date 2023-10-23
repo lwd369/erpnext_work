@@ -13,3 +13,6 @@ class WeChatClient(_WeChatClient):
     """
     user = WeChatUser()
     oauth = WeChatOAuth()
+
+    # 应用ID
+    agentid = None

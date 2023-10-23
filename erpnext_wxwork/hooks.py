@@ -118,13 +118,14 @@ after_uninstall = "erpnext_wxwork.uninstall.after_uninstall"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Notification Log": {
+		"after_insert": "erpnext_wxwork.wxwork.notification_log.after_insert"
+	},
+	"Wxwork User": {
+		"after_insert": "erpnext_wxwork.wxwork.wxwork_user.after_insert"
+	},
+}
 
 # Scheduled Tasks
 # ---------------
