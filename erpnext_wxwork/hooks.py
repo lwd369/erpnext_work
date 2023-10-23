@@ -70,7 +70,7 @@ app_license = "MIT"
 # ------------
 
 # before_uninstall = "erpnext_wxwork.uninstall.before_uninstall"
-# after_uninstall = "erpnext_wxwork.uninstall.after_uninstall"
+after_uninstall = "erpnext_wxwork.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------

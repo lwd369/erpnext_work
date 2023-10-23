@@ -25,7 +25,7 @@ class WxWorkApp(object):
     @classmethod
     def get_entry_app(cls):
         """获取入口应用"""
-        wxwork_setting = frappe.get_doc('wxwork_setting')
+        wxwork_setting = frappe.get_single('wxwork_setting')
         if not wxwork_setting.cropid or not wxwork_setting.app_secret:
             return None
         return cls.__get_app_client(wxwork_setting.cropid, wxwork_setting.get_password("app_secret"), "entry")
@@ -33,7 +33,7 @@ class WxWorkApp(object):
     @classmethod
     def get_contact_app(cls):
         """获取通讯录应用"""
-        wxwork_setting = frappe.get_doc('wxwork_setting')
+        wxwork_setting = frappe.get_single('wxwork_setting')
         if not wxwork_setting.cropid or not wxwork_setting.contact_secret:
             frappe.logger().error('企业微信通讯录应用未配置成功')
             return None
