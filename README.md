@@ -9,7 +9,9 @@
 #### 安装方法
 
 ```
+#如果获取失败，大概率是pip install wechatpy 失败，可以通过指定安装源来手动安装 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple wechatpy==1.8.18
 bench get-app https://gitee.com/shuigu/erpnext_wxwork.git
+
 bench install-app erpnext_wxwork
 
 实施步骤
