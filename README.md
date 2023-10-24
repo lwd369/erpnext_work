@@ -14,7 +14,7 @@ bench install-app erpnext_wxwork
 
 实施步骤
 1.创建企业微信应用
-2.配置wxwork_settign
+2.配置wxwork_setting
 3.新增wxwork_user绑定erpnext user
 
 ```
