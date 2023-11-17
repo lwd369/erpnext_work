@@ -8,7 +8,6 @@
 
 #### 安装方法
 
-```
 #如果获取失败，大概率是pip install wechatpy 失败，可以通过指定安装源来手动安装 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple wechatpy==1.8.18
 bench get-app https://gitee.com/shuigu/erpnext_wxwork.git
 
@@ -25,6 +24,6 @@ bench install-app erpnext_wxwork
 要替换两个信息
 1.域名：把http://erp.your.com换成自己的
 2.跳转路径：把url=%2Fapp%2Fhome  换成要跳转的路径
-```
+
 
 备注： 如果网站域名与部署的域名不一致，请当前网站配置文件加上这个domain配置 例子 sites/erp.bus.com/site_config.json加上"domain":"erp.bus.com"
