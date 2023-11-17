@@ -17,7 +17,9 @@ bench install-app erpnext_wxwork
 实施步骤
 1.创建企业微信应用
 2.配置wxwork_setting
+![输入图片说明](erpnext_wxwork/public/wxwork_setting.png)
 3.新增wxwork_user绑定erpnext user
+![输入图片说明](erpnext_wxwork/public/wxwork_user.png)
 4.设置企业微信应用的首页：
 设置方法http://erp.your.com/api/method/erpnext_wxwork.oauth.redirect?url=%2Fapp%2Fhome
 要替换两个信息
