@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-28 17:43:14.744499",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "url",
+  "user_ids",
+  "title",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "\u8df3\u8f6c\u94fe\u63a5"
+  },
+  {
+   "fieldname": "user_ids",
+   "fieldtype": "Data",
+   "label": "\u5fae\u4fe1\u7528\u6237ID\u5217\u8868"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "\u6807\u9898"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "HTML Editor",
+   "label": "\u5185\u5bb9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-28 17:46:35.330216",
+ "modified_by": "Administrator",
+ "module": "Erpnext Wxwork",
+ "name": "Wxwork Notification Logs",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
