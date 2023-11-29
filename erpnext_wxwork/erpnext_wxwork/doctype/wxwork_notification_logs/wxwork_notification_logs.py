@@ -23,6 +23,9 @@ class WxworkNotificationLogs(Document):
         if doc.user_ids is None:
             return
         entry_app = WxWorkApp.get_entry_app()
+        if entry_app is None:
+            frappe.msgprint("企业微信未配置成功，无法发送企业微信通知")
+            return
         entry_app.message.send_text_card(
             agent_id=entry_app.agentid,
             user_ids=doc.user_ids,
