@@ -27,3 +27,9 @@ bench install-app erpnext_wxwork
 
 
 备注： 如果网站域名与部署的域名不一致，请当前网站配置文件加上这个domain配置 例子 sites/erp.bus.com/site_config.json加上"domain":"erp.bus.com"
+
+#### 如何手动发生企业微信通知
+
+往Wxwork Notification Logs 插入一条数据erpnext_wxwork会自动发生一条企业微信通知
+
+![输入图片说明](erpnext_wxwork/public/image.png)
