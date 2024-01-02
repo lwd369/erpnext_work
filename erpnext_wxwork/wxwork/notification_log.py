@@ -18,7 +18,7 @@ def after_insert(doc, method=None):
     if entry_app is None:
         return frappe.logger().error("企业微信没有配置成功")
 
-    description = html2text(doc.subject) + "<br>" + html2text(doc.email_content)
+    description = html2text(doc.subject or "") + "<br>" + html2text(doc.email_content or "")
     description = description.replace("**", " ")
 
     entry_app.message.send_text_card(

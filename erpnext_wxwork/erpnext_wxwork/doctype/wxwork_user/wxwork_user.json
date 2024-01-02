@@ -55,7 +55,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-23 16:25:33.025733",
+ "modified": "2023-12-19 09:25:07.412562",
  "modified_by": "Administrator",
  "module": "Erpnext Wxwork",
  "name": "wxwork_user",
@@ -78,5 +78,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "wxwork_name",
  "track_changes": 1
 }
