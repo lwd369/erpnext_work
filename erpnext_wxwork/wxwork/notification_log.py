@@ -18,13 +18,10 @@ def after_insert(doc, method=None):
     if entry_app is None:
         return frappe.logger().error("企业微信没有配置成功")
 
-    description = html2text(doc.subject or "") + "<br>" + html2text(doc.email_content or "")
-    description = description.replace("**", " ")
-
     entry_app.message.send_text_card(
         agent_id=entry_app.agentid,
         user_ids=wxwork_userid,
         title="工作通知",
-        description=description,
-        url=url_util.wxwork_oauth_url('/app/' + slug(doc.document_type) + "/" + doc.document_name)
+        description='写死的通知内容',
+        url="/"
     )
